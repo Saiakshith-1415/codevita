@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeVita</title>
+  </head>
+  <body>
+    
+      <div id="splash-logo" style="display: flex; align-items: center; justify-content: center; height: 100vh; width: 100vw; position: fixed; top: 0; left: 0; z-index: 1000; background: #fff;">
+        <img id="morph-logo" src="/logo.png" alt="CodeVita Logo" style="width: 40vw; max-width: 600px; min-width: 200px; height: auto; border-radius: 32px; box-shadow: 0 4px 32px rgba(0,0,0,0.10); transition: transform 1.2s cubic-bezier(.68,-0.55,.27,1.55), border-radius 1.2s cubic-bezier(.68,-0.55,.27,1.55);" />
+      </div>
+    <div id="root"></div>
+    <script>
+      // Morph and hide splash logo
+      window.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          var logo = document.getElementById('morph-logo');
+          if (logo) {
+            logo.style.transform = 'scale(1.15)';
+            logo.style.borderRadius = '50%';
+          }
+        }, 9000);
+        setTimeout(function() {
+          var splash = document.getElementById('splash-logo');
+          if (splash) splash.style.display = 'none';
+        }, 2000);
+      });
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
