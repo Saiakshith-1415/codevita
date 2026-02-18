@@ -13,7 +13,7 @@ function App() {
           try {
             setLoading(true);
             const res = await axios.post(
-              "http://localhost:8000/optimize",
+              "https://codevita.onrender.com",
               { code, language },
               { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -154,7 +154,7 @@ function App() {
 
   const login = async () => {
     try {
-      const res = await axios.post("http://localhost:8000/login", {
+      const res = await axios.post("https://codevita.onrender.com/login", {
         email,
         password,
       });
@@ -173,7 +173,7 @@ function App() {
   const runCode = async () => {
   try {
     const res = await axios.post(
-      "http://localhost:8000/run",
+      "https://codevita.onrender.com/run",
       {
         code,
         language,
@@ -199,7 +199,7 @@ function App() {
     try {
       setLoading(true);
       const res = await axios.post(
-        "http://localhost:8000/analyze",
+        "https://codevita.onrender.com/analyze",
         { code, language },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -220,7 +220,7 @@ function App() {
     try {
       setLoading(true);
       const res = await axios.post(
-        "http://localhost:8000/refactor",
+        "https://codevita.onrender.com/refactor",
         { code, language },
         { headers: { Authorization: `Bearer ${token}` } }
       );
